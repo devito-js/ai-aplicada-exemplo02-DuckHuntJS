@@ -8,6 +8,7 @@ import Utils from '../libs/utils';
 import Duck from './Duck';
 import Dog from './Dog';
 import Hud from './Hud';
+import Aim from './Aim';
 
 const MAX_X = 800;
 const MAX_Y = 600;
@@ -67,7 +68,11 @@ class Stage extends Container {
     this.flashScreen = FLASH_SCREEN;
     this.flashScreen.visible = false;
     this.hud = new Hud({ textures: textures });
-
+    this.aim = new Aim({
+      textures: textures,
+      maxX: MAX_X,
+      maxY: MAX_Y
+    });
     this._setStage();
     this.scaleToWindow();
   }
@@ -156,6 +161,7 @@ class Stage extends Container {
     this.addChild(this.dog);
     this.addChild(this.flashScreen);
     this.addChild(this.hud);
+    this.addChild(this.aim);
 
     return this;
   }

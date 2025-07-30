@@ -1,9 +1,11 @@
+import main from './machine-learning/main';
 import Game from './src/modules/Game';
 
-document.addEventListener('DOMContentLoaded', function() {
-
-  let game = new Game({
+document.addEventListener('DOMContentLoaded', async function () {
+  const game = new Game({
     spritesheet: 'sprites.json'
-  }).load();
+  });
+  await game.load();
+  await main(game)
 
 }, false);
