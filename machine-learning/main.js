@@ -26,6 +26,7 @@ export default async function main(game) {
 
     setInterval(() => {
         const canvas = game.app.renderer.extract.canvas(game.stage);
+
         const ctx = canvas.getContext('2d');
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
