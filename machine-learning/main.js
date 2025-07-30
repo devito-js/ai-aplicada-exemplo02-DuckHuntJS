@@ -9,19 +9,17 @@ export default async function main(game) {
     worker.onmessage = ({ data }) => {
         const { type, x, y } = data;
 
-        if (type === 'prediction') {
-            console.log(`🎯 AI predicted at: (${x}, ${y})`);
-            container.updateHUD(data);
-            game.stage.aim.visible = true;
+        if (type !== 'prediction') return
 
-            game.stage.aim.setPosition(data.x, data.y);
-            const position = game.stage.aim.getGlobalPosition();
+        container.updateHUD(data);
+        game.stage.aim.visible = true;
 
-            game.handleClick({
-                global: position,
-            });
-        }
+        game.stage.aim.setPosition(x, y);
+        const position = game.stage.aim.getGlobalPosition();
 
+        game.handleClick({
+            global: position,
+        });
     };
 
     setInterval(() => {
