@@ -1,38 +1,37 @@
 # DUCK HUNT JS v3.0
 
-[Play the game](https://duckhuntjs.com)
+[Jogar o jogo](https://duckhuntjs.com)
 
-This is an implementation of DuckHunt in Javascript and HTML5. It uses the PixiJS rendering engine, Green Sock Animations, Howler, and Bluebird Promises.
+Esta é uma implementação do Duck Hunt em Javascript e HTML5. Utiliza o motor de renderização PixiJS, animações com Green Sock, Howler e Bluebird Promises.
 
-## Rendering
-This game supports WebGL and Canvas rendering via the PixiJS rendering engine.
+## Renderização
+Este jogo suporta renderização WebGL e Canvas através do motor PixiJS.
 
-## Audio
-This game will attempt to use the WebAudioAPI and fallback to HTML5 Audio if necessary. Audio is loaded and controlled via HowlerJS.
+## Áudio
+O jogo tentará utilizar a WebAudioAPI e, caso não seja suportada, fará fallback para o HTML5 Audio. O áudio é carregado e controlado pelo HowlerJS.
 
-## Tweening
-The animations in this game are a combination of PixiJS MovieClips built from sprite images and tweens. Since PixiJS doesn't provide a tweening API, Green Sock was used.
+## Animações (Tweening)
+As animações do jogo são uma combinação de MovieClips do PixiJS construídos a partir de sprites e tweens. Como o PixiJS não oferece uma API de tweening nativa, foi utilizado o Green Sock.
 
-## Game Logic
-The flow of this game is managed using Javascript. The main chunks of business logic are implemented as ES6 classes which are transpiled to ES5 using Babel.
+## Lógica do Jogo
+O fluxo do jogo é gerenciado em Javascript. Os principais blocos de lógica de negócio são implementados como classes ES6, transpiladas para ES5 usando Babel.
 
-## Working With This Repo
+## Trabalhando com o Repositório
 
- - You must have [nodejs](https://nodejs.org/) installed.
- - Clone the repo into a directory of your choice
- - `cd` into that directory and run `npm install`
- - Use `npm start` to start a local webserver which will make the site available at http://localhost:8080/. Cross origin errors prevent this project from being accessed in the browser with the `file://` protocol. This will also trigger automatic builds and reloads of the page when changes are detected in the `src` directory.
- - If you want to manually cut a build of the application code run `npm run build`
+ - É necessário ter o [Node.js](https://nodejs.org/) instalado.
+ - Clone o repositório em um diretório de sua preferência.
+ - Entre no diretório com `cd` e execute `npm install`.
+ - Use `npm start` para iniciar um servidor local que deixará o jogo disponível em http://localhost:8080/. Erros de origem cruzada (CORS) impedem o acesso via protocolo `file://` no navegador. O comando também ativa recompilação automática e reload da página quando mudanças forem detectadas no diretório `src`.
+ - Para gerar manualmente um build do código da aplicação, execute `npm run build`.
  
-## Working With Audio and Visual Assets
-This repo ships with committed dist files to make it easy for developers to get up and running. If you really want to get into some leet haxing and change the way
-this game looks and sounds then you'll need to work with audio and image sprites. The following tasks make that possible: 
+## Trabalhando com Áudio e Imagens
+Este repositório já inclui os arquivos `dist` commitados para facilitar a configuração inicial. Se quiser alterar a aparência ou os sons do jogo, será necessário trabalhar com sprites de áudio e imagem. As seguintes tarefas tornam isso possível:
 
- - To rebuild audio assets use `npm run audio` (there is a hard dependency on [ffmpeg](https://ffmpeg.org/download.html) to run this task)
- - To rebuild image assets use `npm run images` (there is a hard dependency on [texturepacker](https://www.codeandweb.com/texturepacker/download) to run this task)
+ - Para recompilar os assets de áudio use `npm run audio` (requer [ffmpeg](https://ffmpeg.org/download.html) instalado).
+ - Para recompilar os assets de imagem use `npm run images` (requer [TexturePacker](https://www.codeandweb.com/texturepacker/download) instalado).
 
 ## Bugs
-Please report bugs as [issues](https://github.com/MattSurabian/DuckHunt-JS/issues).
+Reporte bugs como [issues](https://github.com/MattSurabian/DuckHunt-JS/issues).
 
-## Contributing
-Pull requests are welcome! Please ensure code style and quality compliance with `npm run lint` and include any built files.
+## Contribuindo
+Pull requests são bem-vindos! Por favor, garanta conformidade de estilo e qualidade de código com `npm run lint` e inclua os arquivos de build gerados.
