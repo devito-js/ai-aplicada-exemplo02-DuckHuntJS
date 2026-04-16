@@ -1,1 +1,4 @@
+node_modules*
+.terraform
+*.js.map
 node_modules/
