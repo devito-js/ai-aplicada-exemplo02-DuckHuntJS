@@ -1,26 +1,23 @@
-import {
-  extras,
-  loader
-} from 'pixi.js';
+import { Sprite } from 'pixi.js';
 
 const DEFAULT_SIZE = 40;
 const DEFAULT_POSITION = 350;
-class Aim extends extras.AnimatedSprite {
 
-  constructor({
-    spritesheet,
-    maxX,
-    maxY
-  }) {
-    super([loader.resources[spritesheet].textures['aim/0.png']]);
+class Aim extends Sprite {
+  constructor({ maxX, maxY, textures }) {
+    super(textures['aim/0.png']);
+
     this.maxX = maxX;
     this.maxY = maxY;
 
     this.setSize(DEFAULT_SIZE, DEFAULT_SIZE);
     this.move(DEFAULT_POSITION, DEFAULT_POSITION);
-    this.visible = false;
+    this.visible = true;
   }
 
+  move(x, y) {
+    this.position.set(x, y);
+  }
   setSize(width, height) {
     this.width = width;
     this.height = height;
@@ -29,9 +26,9 @@ class Aim extends extras.AnimatedSprite {
   setPosition(x, y) {
     this.position.set(x, y);
 
-    if (this.visible) {
-      this.visible = false;
-    }
+    // if (this.visible) {
+    //   this.visible = false;
+    // }
   }
 
   normalizePosition(x, y) {
@@ -51,9 +48,9 @@ class Aim extends extras.AnimatedSprite {
 
     this.position.set(data.x, data.y);
 
-    if (!this.visible) {
-      this.visible = true;
-    }
+    // if (!this.visible) {
+    //   this.visible = true;
+    // }
   }
 
   reset() {
